@@ -10,7 +10,6 @@ include 'database.php';
 </style>
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,22 +21,30 @@ include 'database.php';
     <link rel="stylesheet" href="signup_modal.css">
     <link rel="stylesheet" href="user_location_input.css">
     <title>Weather App</title>
-    <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <link rel="icon" href="./assests/weather_title.png" type="image/png">
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
+    <style>
+    html, body {
+        background-image: linear-gradient(135deg, #FFF886 10%, #F072B6 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+    }
+    nav {
+        background-color: transparent; /* or your custom background color */
+    }
+</style>
+
 </head>
 
 <body>
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="assests/info.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
@@ -63,26 +70,28 @@ include 'database.php';
                         <div class="d-flex flex-row align-items-center mb-4">
                             <i class="fa fa-user fa-lg me-3 fa-fw"></i>
                             <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                <input type="text" id="form3Example1c" class="form-control" name="username"/>
-                                <label class="form-label" for="form3Example1c">UserName</label>
+                                <input type="text" id="form3Example1c" class="form-control" placeholder="Please enter your Username" name="username" name="username"/>
+                                <label class="form-label" for="form3Example1c">Username</label>
+ 
                             </div>
                         </div>
 
                         <div class="d-flex flex-row align-items-center mb-4">
                             <i class="fa fa-lock fa-lg me-3 fa-fw"></i>
                             <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                <input type="password" id="form3Example4c" class="form-control" name="password"/>
-                                <label class="form-label" for="form3Example4c">Password</label>
+                                <input type="Password" id="form3Example4c"  placeholder="Please enter your Password" class="form-control" name="password"/>
+                                 <label class="form-label" for="form3Example4c">Password</label>
                             </div>
                         </div>
 
                         <div class="d-flex flex-row align-items-center mb-4">
                             <i class="fa fa-key fa-lg me-3 fa-fw"></i>
                             <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                <input type="password" id="form3Example4cd" class="form-control" name="cpassword"/>
-                                <label class="form-label" for="form3Example4cd">Repeat your password</label>
+                                <input type="password" id="form3Example4cd" placeholder="Confirm Password" class="form-control" name="cpassword">
+                                <label class="form-label" for="form3Example4cd">Confirm Password</label>
                             </div>
                         </div>
+
 
                         <div class="form-check d-flex justify-content-center mb-5">
                             <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
@@ -107,7 +116,7 @@ include 'database.php';
             class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
             <!-- Copyright -->
             <div class="text-white mb-3 mb-md-0">
-                Copyright © 2024. All rights reserved.
+                Copyright © 2024 - Vivek. All rights reserved.
             </div>
             <!-- Copyright -->
 

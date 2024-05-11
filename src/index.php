@@ -20,23 +20,36 @@ include 'database.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="user_location_input.css">
+
+    <link rel="icon" href="./assests/weather_title.png" type="image/png">
+
     <title>Weather App</title>
-    <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
+    <style>
+        html,
+        body {
+            background-image: linear-gradient(135deg, #FFF886 10%, #F072B6 100%);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh
+        }
+
+        nav {
+            background-color: transparent;
+            /* or your custom background color */
+        }
+    </style>
+
 </head>
 
 <body>
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="assests/info.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
@@ -198,7 +211,7 @@ include 'database.php';
 
                                             <div id="demo3" data-mdb-carousel-init class="carousel slide"
                                                 data-ride="carousel">
-                                                <!-- Indicators -->
+
 
                                                 <!-- Carousel inner -->
                                                 <div id="weatherCarousel" class="carousel slide" data-ride="carousel">
@@ -244,7 +257,7 @@ include 'database.php';
                             <!-- Email input -->
                             <div data-mdb-input-init class="form-outline mb-4">
                                 <input type="text" id="form3Example3" class="form-control form-control-lg"
-                                    placeholder="Enter a valid email address" name="username" />
+                                    placeholder="Enter a valid username" name="username" />
                                 <label class="form-label" for="form3Example3">username</label>
                             </div>
 
@@ -287,11 +300,10 @@ include 'database.php';
             class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
             <!-- Copyright -->
             <div class="text-white mb-3 mb-md-0">
-                Copyright © 2024. All rights reserved.
+                Copyright © 2024 - Vivek. All rights reserved.
             </div>
             <!-- Copyright -->
 
-            <!-- Right -->
             <div>
                 <a href="#!" class="text-white me-4">
                     <i class="fa fa-facebook-f"></i>
@@ -306,7 +318,7 @@ include 'database.php';
                     <i class="fa fa-linkedin-in"></i>
                 </a>
             </div>
-            <!-- Right -->
+
         </div>
     </div>
 
@@ -333,7 +345,6 @@ include 'database.php';
                     const forecastUrl = data.properties.forecast;
                     const forecasthourlyUrl = data.properties.forecastHourly;
                     const periodsToFetch = 7;
-                    //const carouselInner = document.querySelector('#demo3 .carousel-inner');
 
                     fetch(forecastUrl)
                         .then(response => {
@@ -346,13 +357,9 @@ include 'database.php';
 
                             // Get the carousel element
                             const carousel = document.querySelector('#demo3');
-
-                            // Get the carousel inner element
                             const carouselInner = carousel.querySelector('.carousel-inner');
 
                             carouselInner.innerHTML = '';
-
-                            // Get the periods data and slice it to get the desired number of periods
                             const periods = forecastData.properties.periods.filter((period, index) => {
                                 const periodNumber = index + 1;
                                 return periodNumber % 2 !== 0 && periodNumber <= 14;
@@ -427,34 +434,26 @@ include 'database.php';
                         .then(forecastData => {
 
                             const carousel = document.querySelector('#demo2');
-
-                            // Get the carousel inner element
                             const carouselInner = carousel.querySelector('.carousel-inner');
 
                             carouselInner.innerHTML = '';
 
-                            // Get the periods data and slice it to get the desired number of periods
                             const periods = forecastData.properties.periods.filter((period, index) => {
                                 const periodNumber = index + 1;
                                 return periodNumber % 2 !== 0 && periodNumber <= 14;
                             });
-                            // Loop through the periods and create carousel items
                             periods.forEach((period, index) => {
                                 const name = period.name;
                                 const temperature = period.temperature;
                                 const precipitationProbability = period.probabilityOfPrecipitation.value;
 
-                                // Create a new carousel item div
                                 const carouselItem = document.createElement('div');
                                 carouselItem.classList.add('carousel-item');
 
-                                // Add the 'active' class to the first carousel item
                                 if (index === 0) {
                                     carouselItem.classList.add('active');
                                 }
 
-
-                                // Create the HTML content for the carousel item
                                 const itemHTML = `
                                 <div class="d-flex justify-content-around text-center mb-4 pb-3 pt-2">
                                 ${periods.map((period, periodIndex) => `
@@ -472,14 +471,11 @@ include 'database.php';
                             `;
 
                                 carouselItem.innerHTML = itemHTML;
-
-                                // Append the carousel item to the carousel inner element
                                 carouselInner.appendChild(carouselItem);
                             });
 
-                            // Initialize the carousel
                             const carouselInstance = new bootstrap.Carousel(carousel, {
-                                interval: false // Prevent automatic sliding
+                                interval: false
                             });
 
                         })
