@@ -1,21 +1,44 @@
 <?php
-/******* Instructions *****/
-// The following code can be used to get a database object (`$db_handle`) that
-// is connected to the MariaDB database container. Feel free to "require" this
-// script in other php scripts and to use `global $db_handle;` as your means
-// to execute queries in the database. If you prefer a different approach,
-// feel free to use your own approach.
 
-// Read the database connection parameters from environment variables
-$db_host = getenv('DB_HOST');
-$db_name = getenv('DB_NAME');
-$db_user = getenv('DB_USER');
+include 'db_connect.php'; // Include the database connection file
 
-// Read the password file path from an environment variable
-$password_file_path = getenv('PASSWORD_FILE_PATH');
+//trigger exception in a "try" block
+try {
+  $table_name = "USER_DETAILS";
+  $create_table_query = "CREATE TABLE IF NOT EXISTS $table_name (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(30) NOT NULL,
+  password VARCHAR(256) NOT NULL,
+  reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  )";
 
-// Read the password from the file
-$db_pass = trim(file_get_contents($password_file_path));
+  if ($db_handle->query($create_table_query)) {
 
-// Create a new PDO instance
-$db_handle = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+  } else {
+  }
+
+  $table_name_1 = "USER_LOCATION_DATA";
+  $create_table_query_1 = "CREATE TABLE IF NOT EXISTS  $table_name_1 (
+    L_ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    locationname VARCHAR(100) NOT NULL,
+    x VARCHAR(100) NOT NULL,
+    y VARCHAR(100) NOT NULL,
+    id INT(6) UNSIGNED,
+    FOREIGN KEY (id) REFERENCES USER_DETAILS(id)
+);
+
+  )";
+
+  if ($db_handle->query($create_table_query_1)) {
+
+  } else {
+
+  }
+} 
+
+//catch exception
+catch (PDOException  $e) {
+  echo 'Message: ' . $e->getMessage();
+}
+
+?>

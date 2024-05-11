@@ -1,0 +1,160 @@
+.parent {
+  position: relative;
+  display: flex;
+  float: inline-start;
+  flex-direction: row;
+  flex: auto;
+  justify-items: flex-start;
+}
+
+.UserLocationInput {
+  width: 400px;
+  height: 600px;
+  margin: 10px auto;
+  border: 1px solid lightgray;
+  border-radius: 14px;
+  padding: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.Block2 {
+  width: 700px;
+  margin: 10px;
+  border: 1px solid lightgray;
+  border-radius: 14px;
+  padding: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.Block3 {
+  width: 700px;
+  margin: 10px;
+  border: 1px solid lightgray;
+  border-radius: 14px;
+  padding: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.foodReviewCard {
+  width: 400px;
+  margin: 10px auto;
+  border: 1px solid lightgray;
+  border-radius: 14px;
+  padding: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.header {
+  position: relative;
+}
+
+.imgpreview {
+  width: 100%;
+  border-radius: 14px;
+}
+
+.mustry {
+  font-size: 16px;
+  padding: 2px 10px;
+  font-weight: bold;
+  background-color: lightskyblue;
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.time {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  font-weight: bold;
+  background-color: whitesmoke;
+  padding: 3px 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.promotion {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 2px 5px;
+  border-radius: 2px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+}
+
+.resName {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.cuisine {
+  color: gray;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.safety-container {
+  height: 100%;
+  justify-content: center;
+}
+
+.forminputlocation {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.degree:after {
+  content: "°C";
+  position: absolute;
+  font-size: 3rem;
+  margin-top: 0.4rem;
+  font-weight: 400;
+}
+
+#errorInfo {
+  width: 200px;
+  height: 60px;
+  font-size: small;
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #ffffff;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 236, 210, 1)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 236, 210, 1)
+  );
+}
+
+.carousel-indicators li {
+  background-color: #282828;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
