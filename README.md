@@ -48,13 +48,13 @@ Before proceeding, ensure you have the following installed:
 ### Watching for Changes:
 If you want to watch for changes and automatically rebuild the application when code changes occur, you can use Docker Compose with the `--build` and `--watch` flags. Run the following command:
    ```bash
-   docker- ompose up --build --watch
+   docker- compose up --build --watch
    ```
 
 This will enable automatic rebuilding and updating of the application as you make changes to the codebase.
 
 3.5. we can Run the command directly without running above 3.3. and 3.4
-    ```bash
+   ```bash
    docker compose --watch
    ```
 
@@ -64,7 +64,7 @@ This will enable automatic rebuilding and updating of the application as you mak
 - Frontend Framework: Bootstrap 
 - CSS: Cascading Style Sheets (CSS) 
 - HTML: Hypertext Markup Language (HTML) 
-- Database: MySQL 
+- Database: Maria 
 - Server-side Language: PHP 
 - Web Server: Apache 
 - Version Control: Git 
